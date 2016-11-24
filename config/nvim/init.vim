@@ -82,15 +82,28 @@ if executable('ag')
   endif
 endif
 
-
 " Make it obvious where 80 characters is
 set textwidth=80
-set colorcolumn=+1
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=80,100
 
 " Numbers
 set number
 set numberwidth=5
+
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -121,6 +134,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
+let NERDTreeShowHidden=1
+
 " Colorscheme
 colorscheme railscasts
 
@@ -132,4 +147,20 @@ set wrap
 
 " this turns off physical line wrapping (ie: automatic insertion of newlines)
 set textwidth=0 wrapmargin=0
-autocmd BufWritePre * %s/\s\+$//e
+
+" strip whitespaces on save
+autocmd BufWritePre * StripWhitespace
+
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+
+" deoplete
+call deoplete#enable()
+
+" neovim
+autocmd! BufWritePost * Neomake
+
+" gutentag
+let g:gutentags_cache_dir = '~/.tags_cache'
