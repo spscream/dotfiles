@@ -165,3 +165,5 @@ let g:gutentags_cache_dir = '~/.tags_cache'
 " neovim
 autocmd! BufWritePost * Neomake
 
+" tmuxline
+let g:tmuxline_preset = 'full'
