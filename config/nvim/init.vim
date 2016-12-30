@@ -84,7 +84,7 @@ endif
 
 " Make it obvious where 80 characters is
 set textwidth=80
-set colorcolumn=80,100
+set colorcolumn=80,100,120
 
 " Numbers
 set number
@@ -159,8 +159,9 @@ let g:airline#extensions#whitespace#enabled = 1
 " deoplete
 call deoplete#enable()
 
+" gutentag
+let g:gutentags_cache_dir = '~/.tags_cache'
+
 " neovim
 autocmd! BufWritePost * Neomake
 
-" gutentag
-let g:gutentags_cache_dir = '~/.tags_cache'
