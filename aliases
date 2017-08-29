@@ -1,0 +1,10 @@
+# NeoVim
+alias vim="nvim"
+
+# Unix
+alias ll="ls -al"
+alias mkdir="mkdir -p"
+
+# CCS
+alias ccs="cd ~/work/projects/ikrasivo/ccs"
+
