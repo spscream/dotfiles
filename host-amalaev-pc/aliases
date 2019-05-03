@@ -1,0 +1,10 @@
+# NeoVim
+alias vim="nvim"
+
+# Unix
+alias ll="ls -al"
+alias mkdir="mkdir -p"
+
+# Css
+alias css="cd ~/work/project/express/backend"
+alias cloud="cd ~/work/project/express/cloud"

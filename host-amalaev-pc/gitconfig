@@ -1,0 +1,7 @@
+[user]
+	email = amalaev@ccsteam.ru
+	name = Alexander Malaev
+[push]
+	default = simple
+[core]
+	excludesfile = /usr/local/home/amalaev/.gitignore_global
