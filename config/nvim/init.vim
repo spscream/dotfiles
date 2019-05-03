@@ -143,7 +143,7 @@ let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 let NERDTreeShowHidden=1
 
 " Colorscheme
-colorscheme Tomorrow-night
+colorscheme Tomorrow-Night-Eighties
 
 " Disable folding for markdown
 let g:vim_markdown_folding_disabled = 1
@@ -163,13 +163,20 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 
 " deoplete
-call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
 
 " gutentag
 let g:gutentags_cache_dir = '~/.tags_cache'
 
+" alchemist
+let g:alchemist_tag_disable = 1
+
 " neovim
 autocmd! BufWritePost * Neomake
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 " tmuxline
 let g:tmuxline_preset = 'full'
+
+" gitgutter
+let g:gitgutter_max_signs=9999

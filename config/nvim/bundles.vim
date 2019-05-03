@@ -52,7 +52,8 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'kburdett/vim-nuuid'
 Plug 'pearofducks/ansible-vim'
 Plug 'wakatime/vim-wakatime'
-
+Plug 'toyamarinyon/vim-swift'
+Plug 'DataWraith/auto_mkdir'
 
 call plug#end()
 
