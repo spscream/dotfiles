@@ -180,3 +180,6 @@ let g:tmuxline_preset = 'full'
 
 " gitgutter
 let g:gitgutter_max_signs=9999
+
+" transparency
+hi Normal guibg=NONE ctermbg=NONE
