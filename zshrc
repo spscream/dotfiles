@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/amalaev/.oh-my-zsh
+export ZSH=/home/amalaev/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,7 +52,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(asdf adb brew cp command-not-found common-aliases docker-compose docker
-git osx bundler ruby rake sudo rvm rebar tmux tmuxinator dotenv droplr extract mix)
+git bundler ruby rake sudo rvm rebar tmux tmuxinator dotenv droplr extract mix)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,13 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export HOMEBREW_GITHUB_API_TOKEN="f15ab4e8ffd9112af5eaa686abe435a6adcc8d69"
-
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
-# custom completions
-. $HOME/.dotfiles/completions/kubernetes
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -102,13 +96,3 @@ export PATH=~/anaconda3/bin:~/local/bin/:"$PATH"
 export EDITOR=nvim
 
 ulimit -n 65536 200000
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/amalaev/.sdkman"
-[[ -s "/Users/amalaev/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/amalaev/.sdkman/bin/sdkman-init.sh"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/amalaev/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/amalaev/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/amalaev/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/amalaev/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
