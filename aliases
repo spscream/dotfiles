@@ -6,5 +6,5 @@ alias ll="ls -al"
 alias mkdir="mkdir -p"
 
 # CCS
-alias ccs="cd ~/work/projects/ikrasivo/ccs"
+alias ccs="cd ~/work/ccs"
 
